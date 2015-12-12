@@ -11,5 +11,6 @@
 @interface MXNewsTableViewController : UITableViewController <NSXMLParserDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (copy, nonatomic) NSString *url;
 
 @end

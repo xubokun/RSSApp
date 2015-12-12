@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1927755E1C1C15F500D6396C /* MXSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1927755D1C1C15F500D6396C /* MXSelectionViewController.m */; };
 		193717111C152CEE009B4B74 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 193717101C152CEE009B4B74 /* main.m */; };
 		193717141C152CEE009B4B74 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 193717131C152CEE009B4B74 /* AppDelegate.m */; };
 		193717171C152CEE009B4B74 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193717161C152CEE009B4B74 /* ViewController.m */; };
@@ -21,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1927755C1C1C15F500D6396C /* MXSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXSelectionViewController.h; sourceTree = "<group>"; };
+		1927755D1C1C15F500D6396C /* MXSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXSelectionViewController.m; sourceTree = "<group>"; };
 		1937170C1C152CEE009B4B74 /* ReadMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReadMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		193717101C152CEE009B4B74 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		193717121C152CEE009B4B74 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -98,6 +101,8 @@
 		1937173F1C158329009B4B74 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1927755C1C1C15F500D6396C /* MXSelectionViewController.h */,
+				1927755D1C1C15F500D6396C /* MXSelectionViewController.m */,
 				193717411C158630009B4B74 /* MXWebViewController.h */,
 				193717421C158630009B4B74 /* MXWebViewController.m */,
 				193717391C1549F2009B4B74 /* MXNewsTableViewController.h */,
@@ -187,6 +192,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1927755E1C1C15F500D6396C /* MXSelectionViewController.m in Sources */,
 				193717171C152CEE009B4B74 /* ViewController.m in Sources */,
 				193717431C158630009B4B74 /* MXWebViewController.m in Sources */,
 				193717141C152CEE009B4B74 /* AppDelegate.m in Sources */,
@@ -346,6 +352,7 @@
 				193717251C152CEE009B4B74 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
