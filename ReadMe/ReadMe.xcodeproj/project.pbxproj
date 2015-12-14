@@ -35,6 +35,7 @@
 		19B9246E1C1E96E40009AF42 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19B9246D1C1E96E40009AF42 /* SystemConfiguration.framework */; };
 		19B924701C1E96F10009AF42 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 19B9246F1C1E96F10009AF42 /* libz.tbd */; };
 		19B924721C1E96FA0009AF42 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 19B924711C1E96FA0009AF42 /* libsqlite3.tbd */; };
+		19B924751C1EABBF0009AF42 /* MXSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B924741C1EABBF0009AF42 /* MXSettingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,8 @@
 		19B9246D1C1E96E40009AF42 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		19B9246F1C1E96F10009AF42 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		19B924711C1E96FA0009AF42 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		19B924731C1EABBF0009AF42 /* MXSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXSettingsViewController.h; sourceTree = "<group>"; };
+		19B924741C1EABBF0009AF42 /* MXSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXSettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +161,8 @@
 				1937173A1C1549F2009B4B74 /* MXNewsTableViewController.m */,
 				193717151C152CEE009B4B74 /* ViewController.h */,
 				193717161C152CEE009B4B74 /* ViewController.m */,
+				19B924731C1EABBF0009AF42 /* MXSettingsViewController.h */,
+				19B924741C1EABBF0009AF42 /* MXSettingsViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -275,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1927755E1C1C15F500D6396C /* MXSelectionViewController.m in Sources */,
+				19B924751C1EABBF0009AF42 /* MXSettingsViewController.m in Sources */,
 				19B924501C1E56BC0009AF42 /* MXFavoritesViewController.m in Sources */,
 				193717171C152CEE009B4B74 /* ViewController.m in Sources */,
 				19B924551C1E6AD40009AF42 /* Model.m in Sources */,
