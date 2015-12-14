@@ -8,6 +8,7 @@
 
 #import "MXNewsTableViewController.h"
 #import "MXWebViewController.h"
+#import "Model.h"
 
 @interface MXNewsTableViewController () {
     
@@ -18,13 +19,19 @@
     NSMutableString *link;
     NSString *element;
 }
+@property (strong, nonatomic) Model *model;
 
 @end
 
 @implementation MXNewsTableViewController
+@synthesize favorites;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.model = [Model sharedModel];
+    
+    favorites = [[NSMutableArray alloc] init];
     
     feeds = [[NSMutableArray alloc] init];
    
@@ -55,8 +62,43 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     cell.textLabel.text = [[feeds objectAtIndex:indexPath.row] objectForKey:@"title"];
+    cell.textLabel.text = [cell.textLabel.text substringToIndex:MIN(32, [cell.textLabel.text length])];
+    
+    //Create the button and add it to the cell
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [button addTarget:self
+               action:@selector(customActionPressed:)
+     forControlEvents:UIControlEventTouchDown];
+    [button setTitle:@"Save" forState:UIControlStateNormal];
+    button.frame = CGRectMake(150.0f, 5.0f, 370.0f, 30.0f);
+    [cell addSubview:button];
     
     return cell;
+}
+
+- (IBAction)customActionPressed:(id)sender {
+    NSLog(@"Saved to favorites.");
+    
+    CGPoint buttonPosition = [sender convertPoint:CGPointZero toView:self.tableView];
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:buttonPosition];
+    UITableViewCell *selectedCell = [self.tableView cellForRowAtIndexPath:indexPath];
+    NSLog([[feeds objectAtIndex:indexPath.row] objectForKey:@"title"]);
+    
+    NSString *title = [[feeds objectAtIndex:indexPath.row] objectForKey:@"title"];
+    NSString *link = [[feeds objectAtIndex:indexPath.row] objectForKey:@"link"];
+    
+//    NSDictionary *newsDict = @{
+//                               @"title": title,
+//                               @"link": link
+//                               };
+//    
+//    [self.favorites addObject:newsDict];
+//    NSLog(@"%@", self.favorites);
+//    NSLog(@"%d", self.favorites.count);
+    [self.model insertFavorite:title link:link atIndex:0];
+    //NSLog(@"%lu", (unsigned long)[self.model numberOfFavorites]);
+    
+    
 }
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary<NSString *,NSString *> *)attributeDict {

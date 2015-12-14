@@ -19,6 +19,10 @@
 		1937172B1C152D3F009B4B74 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1937172A1C152D3F009B4B74 /* FBSDKShareKit.framework */; };
 		1937173B1C1549F2009B4B74 /* MXNewsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1937173A1C1549F2009B4B74 /* MXNewsTableViewController.m */; };
 		193717431C158630009B4B74 /* MXWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193717421C158630009B4B74 /* MXWebViewController.m */; };
+		19B924501C1E56BC0009AF42 /* MXFavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B9244F1C1E56BC0009AF42 /* MXFavoritesViewController.m */; };
+		19B924551C1E6AD40009AF42 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B924541C1E6AD40009AF42 /* Model.m */; };
+		19B924571C1E8E360009AF42 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19B924561C1E8E360009AF42 /* AVFoundation.framework */; };
+		19B924591C1E8FA50009AF42 /* Rainy-mood.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 19B924581C1E8FA50009AF42 /* Rainy-mood.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +45,12 @@
 		1937173A1C1549F2009B4B74 /* MXNewsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXNewsTableViewController.m; sourceTree = "<group>"; };
 		193717411C158630009B4B74 /* MXWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MXWebViewController.h; path = ../MXWebViewController.h; sourceTree = "<group>"; };
 		193717421C158630009B4B74 /* MXWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MXWebViewController.m; path = ../MXWebViewController.m; sourceTree = "<group>"; };
+		19B9244E1C1E56BC0009AF42 /* MXFavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXFavoritesViewController.h; sourceTree = "<group>"; };
+		19B9244F1C1E56BC0009AF42 /* MXFavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXFavoritesViewController.m; sourceTree = "<group>"; };
+		19B924531C1E6AD40009AF42 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
+		19B924541C1E6AD40009AF42 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
+		19B924561C1E8E360009AF42 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		19B924581C1E8FA50009AF42 /* Rainy-mood.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Rainy-mood.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19B924571C1E8E360009AF42 /* AVFoundation.framework in Frameworks */,
 				193717291C152D39009B4B74 /* FBSDKLoginKit.framework in Frameworks */,
 				193717281C152D39009B4B74 /* FBSDKCoreKit.framework in Frameworks */,
 				1937172B1C152D3F009B4B74 /* FBSDKShareKit.framework in Frameworks */,
@@ -60,6 +71,7 @@
 		193717031C152CEE009B4B74 = {
 			isa = PBXGroup;
 			children = (
+				19B924561C1E8E360009AF42 /* AVFoundation.framework */,
 				1937172A1C152D3F009B4B74 /* FBSDKShareKit.framework */,
 				193717261C152D39009B4B74 /* FBSDKCoreKit.framework */,
 				193717271C152D39009B4B74 /* FBSDKLoginKit.framework */,
@@ -79,6 +91,7 @@
 		1937170E1C152CEE009B4B74 /* ReadMe */ = {
 			isa = PBXGroup;
 			children = (
+				19B924521C1E6ABB0009AF42 /* Model */,
 				193717401C15833D009B4B74 /* View */,
 				1937173F1C158329009B4B74 /* Controllers */,
 				1937170F1C152CEE009B4B74 /* Supporting Files */,
@@ -89,6 +102,7 @@
 		1937170F1C152CEE009B4B74 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				19B924581C1E8FA50009AF42 /* Rainy-mood.mp3 */,
 				193717121C152CEE009B4B74 /* AppDelegate.h */,
 				193717131C152CEE009B4B74 /* AppDelegate.m */,
 				193717201C152CEE009B4B74 /* Info.plist */,
@@ -101,6 +115,8 @@
 		1937173F1C158329009B4B74 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				19B9244E1C1E56BC0009AF42 /* MXFavoritesViewController.h */,
+				19B9244F1C1E56BC0009AF42 /* MXFavoritesViewController.m */,
 				1927755C1C1C15F500D6396C /* MXSelectionViewController.h */,
 				1927755D1C1C15F500D6396C /* MXSelectionViewController.m */,
 				193717411C158630009B4B74 /* MXWebViewController.h */,
@@ -120,6 +136,15 @@
 				1937171D1C152CEE009B4B74 /* LaunchScreen.storyboard */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		19B924521C1E6ABB0009AF42 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				19B924531C1E6AD40009AF42 /* Model.h */,
+				19B924541C1E6AD40009AF42 /* Model.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +207,7 @@
 				1937171F1C152CEE009B4B74 /* LaunchScreen.storyboard in Resources */,
 				1937171C1C152CEE009B4B74 /* Assets.xcassets in Resources */,
 				1937171A1C152CEE009B4B74 /* Main.storyboard in Resources */,
+				19B924591C1E8FA50009AF42 /* Rainy-mood.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,7 +219,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1927755E1C1C15F500D6396C /* MXSelectionViewController.m in Sources */,
+				19B924501C1E56BC0009AF42 /* MXFavoritesViewController.m in Sources */,
 				193717171C152CEE009B4B74 /* ViewController.m in Sources */,
+				19B924551C1E6AD40009AF42 /* Model.m in Sources */,
 				193717431C158630009B4B74 /* MXWebViewController.m in Sources */,
 				193717141C152CEE009B4B74 /* AppDelegate.m in Sources */,
 				193717111C152CEE009B4B74 /* main.m in Sources */,

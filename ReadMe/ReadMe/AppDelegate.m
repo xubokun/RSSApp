@@ -18,12 +18,23 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    NSString *music = [[NSBundle mainBundle]pathForResource:@"Rainy-mood" ofType:@"mp3"];
+    audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:music] error:NULL];
+    audioPlayer.delegate = self;
+    audioPlayer.numberOfLoops = -1;
+    [audioPlayer play];
+    
     // Override point for customization after application launch.
     
     [[UINavigationBar appearance] setTranslucent:NO];
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:1.00 green:0.60 blue:0.00 alpha:1.0]];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    
+    [[UITabBar appearance] setTranslucent:NO];
+    //[[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:1.00 green:0.60 blue:0.00 alpha:1.0]];
+    [[UITabBar appearance] setTintColor:[UIColor colorWithRed:1.00 green:0.60 blue:0.00 alpha:1.0]];
     
     [[FBSDKApplicationDelegate sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
     

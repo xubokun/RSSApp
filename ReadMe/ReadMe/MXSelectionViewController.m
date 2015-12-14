@@ -30,7 +30,14 @@
                   @"https://upload.wikimedia.org/wikipedia/en/thumb/8/82/CNET.svg/1024px-CNET.svg.png", //cnet
                   @"http://static1.squarespace.com/static/54f5b878e4b02932b195baf4/54f742dce4b0d3690345d1a8/54f744d2e4b0b26b872ae204/1425491155228/Logo.jpg", //techworld
                   @"http://www.steveharveylaw.com/wp-content/uploads/2013/06/cnn-hd-logo-png-sk.png", //cnn
-                  @"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/BuzzFeed.svg/2000px-BuzzFeed.svg.png"];
+                  @"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/BuzzFeed.svg/2000px-BuzzFeed.svg.png",
+                  @"http://collegeforamerica.org/wp-content/uploads/2015/05/fox_news_logo_a_l3.png", //fox
+                  @"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/The_Wall_Street_Journal_Logo.svg/2000px-The_Wall_Street_Journal_Logo.svg.png", //wsj
+                  @"https://healthyartists.files.wordpress.com/2013/09/huffington-post-icon.jpg", //huffington
+                  @"https://s3.amazonaws.com/rapgenius/gq_logoredblack.jpg", //gq
+                  @"https://upload.wikimedia.org/wikipedia/commons/2/23/Google-News_logo.png", //google
+                  @"http://static.tumblr.com/54e5cf4bfb89f3d0693e59ff99573ade/xhawh4f/dwLn3iu62/tumblr_static_ign_com_no_chrome-1.png", //ign
+                  @"https://upload.wikimedia.org/wikipedia/commons/3/3e/PC_Gamer_logo.jpg"];
                   
     newsLinks = @[@"http://www.wired.com/category/gear/feed/",
                   @"http://feeds.feedburner.com/TechCrunch/",
@@ -38,7 +45,14 @@
                   @"http://www.cnet.com/rss/all/",
                   @"http://www.techworld.com/news/rss",
                   @"http://rss.cnn.com/rss/cnn_topstories.rss",
-                  @"http://www.buzzfeed.com/community/justlaunched.xml"];
+                  @"http://www.buzzfeed.com/community/justlaunched.xml",
+                  @"http://feeds.foxnews.com/foxnews/latest?format=xml",
+                  @"http://www.wsj.com/xml/rss/3_7455.xml",
+                  @"http://www.huffingtonpost.com/feeds/news.xml",
+                  @"http://www.gq.com/rss",
+                  @"http://news.google.com/news?cf=all&hl=en&pz=1&ned=us&output=rss",
+                  @"http://feeds.ign.com/ign/all?format=xml",
+                  @"http://dynamic.feedsportal.com/pf/510578/http://www.pcgamer.com/feed/rss2/"];
     
     images = [[NSMutableArray alloc] init];
     
@@ -94,7 +108,7 @@
         
         [NSThread sleepForTimeInterval:3];
         
-        NSLog(@"Background Processed %ld. Time remaining is: %f", (long)counter, remainingTime);
+        //NSLog(@"Background Processed %ld. Time remaining is: %f", (long)counter, remainingTime);
         
     }
     
