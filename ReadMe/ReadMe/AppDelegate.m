@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <Parse/Parse.h>
 
 @interface AppDelegate ()
 
@@ -35,6 +36,16 @@
     [[UITabBar appearance] setTranslucent:NO];
     //[[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:1.00 green:0.60 blue:0.00 alpha:1.0]];
     [[UITabBar appearance] setTintColor:[UIColor colorWithRed:1.00 green:0.60 blue:0.00 alpha:1.0]];
+    
+    [Parse enableLocalDatastore];
+    
+    // Initialize Parse.
+    [Parse setApplicationId:@"bXkcrGm0mM1J9OgXLwGrvOAtAHT3jrPPNuWwnIRQ"
+                  clientKey:@"Xyx76YLgwmArRLrpQt1gG3gvZfQEWaHBZnFGKbIO"];
+    
+    // [Optional] Track statistics around application opens.
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
     
     [[FBSDKApplicationDelegate sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
     

@@ -7,6 +7,7 @@
 //
 
 #import "Model.h"
+#import <Parse/Parse.h>
 
 @interface Model ()
 
@@ -47,7 +48,6 @@
                                     };
         [self.favorites insertObject: quoteDict atIndex:index];
     }
-    //NSLog(@"%lu", (unsigned long)self.favorites.count);
 }
 
 + (instancetype) sharedModel {
