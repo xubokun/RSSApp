@@ -12,6 +12,5 @@
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (copy, nonatomic) NSString *url;
-@property (nonatomic, strong) NSMutableArray *favorites;
 
 @end

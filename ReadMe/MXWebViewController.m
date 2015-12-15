@@ -20,14 +20,19 @@
     
     NSURL *URL = [NSURL URLWithString:[self.url stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]];
     
+    // load request with url given from previous views
+    
     NSURLRequest *request = [NSURLRequest requestWithURL:URL];
     [self.webView loadRequest:request];
+    
+    // add webview subview
     
     [self.webView addSubview:ActInd];
     timer = [NSTimer scheduledTimerWithTimeInterval:(1.0/2.0) target:self selector:@selector(loading) userInfo:nil repeats:YES];
     
 }
 
+// activity indicator loading animation
 - (void)loading {
     
     if (!self.webView.loading) {
@@ -35,7 +40,6 @@
     } else {
         [ActInd startAnimating];
     }
-    
 }
 
 - (void)didReceiveMemoryWarning {

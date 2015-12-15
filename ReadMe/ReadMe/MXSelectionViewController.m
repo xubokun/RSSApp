@@ -24,6 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // Array of links to logo pictures
     logoLinks = @[@"http://purelifi.com/wp-content/uploads/2015/10/logo_wired.png", //wired
                   @"http://www.stackdriver.com/wp-content/uploads/customer-logos/techcrunch-logo.png", //techcrunch
                   @"https://upload.wikimedia.org/wikipedia/commons/7/77/The_New_York_Times_logo.png", //newyorktimes
@@ -38,7 +39,8 @@
                   @"https://upload.wikimedia.org/wikipedia/commons/2/23/Google-News_logo.png", //google
                   @"http://static.tumblr.com/54e5cf4bfb89f3d0693e59ff99573ade/xhawh4f/dwLn3iu62/tumblr_static_ign_com_no_chrome-1.png", //ign
                   @"https://upload.wikimedia.org/wikipedia/commons/3/3e/PC_Gamer_logo.jpg"];
-                  
+    
+    // Array of links to rss feed
     newsLinks = @[@"http://www.wired.com/category/gear/feed/",
                   @"http://feeds.feedburner.com/TechCrunch/",
                   @"http://rss.nytimes.com/services/xml/rss/nyt/Technology.xml",
@@ -65,10 +67,12 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+// Start executing background task method
 - (void)startBackgroundTask {
     
     UIDevice *device = [UIDevice currentDevice];
     
+    // check if device is multitask supported
     if (! [device isMultitaskingSupported]) {
         NSLog(@"Multitasking not supported on this device.");
         return;
@@ -80,6 +84,7 @@
     });
 }
 
+// Background Task Method
 - (void)performBackgroundTask {
     NSInteger counter = 0;
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
@@ -99,6 +104,7 @@
         
         UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:logoLinks[counter]]]];
         
+        // add images to our imagetable and insert rows 1 by 1
         dispatch_async(dispatch_get_main_queue(), ^{
             [_imageTable beginUpdates];
             [images addObject:image];
@@ -132,6 +138,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    // return images object count
     return images.count;
 }
 
@@ -140,14 +147,15 @@
     NSString *CellIdentifier = @"cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    //cell.textLabel.text = [logoLinks objectAtIndex:indexPath.row];
-    
+    // populate rows with logo images
     cell.imageView.image = [images objectAtIndex:indexPath.row];
     
     return cell;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    // prepare for segue to web view
     
     if ([[segue identifier] isEqualToString:@"selected"]) {
         NSIndexPath *indexPath = [self.imageTable indexPathForSelectedRow];

@@ -24,14 +24,11 @@
 @end
 
 @implementation MXNewsTableViewController
-@synthesize favorites;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.model = [Model sharedModel];
-    
-    favorites = [[NSMutableArray alloc] init];
     
     feeds = [[NSMutableArray alloc] init];
    
@@ -55,10 +52,13 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    //return feeds object count
     return feeds.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    // populate cells with news title and truncate to 32 characters
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     cell.textLabel.text = [[feeds objectAtIndex:indexPath.row] objectForKey:@"title"];
@@ -76,32 +76,27 @@
     return cell;
 }
 
+// action for when cell button is pressed
 - (IBAction)customActionPressed:(id)sender {
     NSLog(@"Saved to favorites.");
     
     CGPoint buttonPosition = [sender convertPoint:CGPointZero toView:self.tableView];
     NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:buttonPosition];
     UITableViewCell *selectedCell = [self.tableView cellForRowAtIndexPath:indexPath];
-    NSLog([[feeds objectAtIndex:indexPath.row] objectForKey:@"title"]);
+    //NSLog([[feeds objectAtIndex:indexPath.row] objectForKey:@"title"]);
     
     NSString *title = [[feeds objectAtIndex:indexPath.row] objectForKey:@"title"];
     NSString *link = [[feeds objectAtIndex:indexPath.row] objectForKey:@"link"];
     
-//    NSDictionary *newsDict = @{
-//                               @"title": title,
-//                               @"link": link
-//                               };
-//    
-//    [self.favorites addObject:newsDict];
-//    NSLog(@"%@", self.favorites);
-//    NSLog(@"%d", self.favorites.count);
-    [self.model insertFavorite:title link:link atIndex:0];
-    //NSLog(@"%lu", (unsigned long)[self.model numberOfFavorites]);
+    // insert dictionary object with title and link to our model favorites array
     
+    [self.model insertFavorite:title link:link atIndex:0];
     
 }
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary<NSString *,NSString *> *)attributeDict {
+    
+    // look for tag "item" to find start of article entries
     
     element = elementName;
     if ([element isEqualToString:@"item"]) {
@@ -112,6 +107,8 @@
 }
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
+    
+    // look for title and link tag to set objects in item dictionary and add to feeds array
 
     if ([elementName isEqualToString:@"item"]) {
         [item setObject:title forKey:@"title"];
@@ -121,6 +118,8 @@
 }
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
+    
+    // look for title and link tag to add string to title and link objects
     
     if ([element isEqualToString:@"title"]) {
         [title appendString:string];
@@ -134,6 +133,8 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    // prepare for segue to web view with url link
     
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];

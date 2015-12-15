@@ -352,7 +352,7 @@
             </objects>
             <point key="canvasLocation" x="1855" y="387"/>
         </scene>
-        <!--Settings View Controller-->
+        <!--Settngs-->
         <scene sceneID="RjA-uZ-CE7">
             <objects>
                 <viewController id="Oij-eQ-aDg" customClass="MXSettingsViewController" sceneMemberID="viewController">
@@ -375,14 +375,14 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="uhO-bz-23b" firstAttribute="centerX" secondItem="1pP-gE-xjk" secondAttribute="centerX" id="8Xd-Ng-mnE"/>
                             <constraint firstItem="uhO-bz-23b" firstAttribute="centerY" secondItem="1pP-gE-xjk" secondAttribute="centerY" id="Pls-2W-q0p"/>
                             <constraint firstItem="uhO-bz-23b" firstAttribute="leading" secondItem="1pP-gE-xjk" secondAttribute="leadingMargin" constant="96" id="Vz0-Rr-teZ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="PYX-p6-P6J"/>
+                    <navigationItem key="navigationItem" title="Settngs" id="PYX-p6-P6J"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hBh-FR-45m" userLabel="First Responder" sceneMemberID="firstResponder"/>

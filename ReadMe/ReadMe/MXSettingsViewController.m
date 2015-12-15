@@ -15,9 +15,12 @@
 @end
 
 @implementation MXSettingsViewController
+
+// log out button
 - (IBAction)logOutButton:(id)sender {
     [[FBSDKLoginManager new] logOut];
     
+    // dismiss current view and go to sign in view
     [self dismissViewControllerAnimated:YES completion:nil];
     [self.navigationController popToRootViewControllerAnimated:YES];
 }

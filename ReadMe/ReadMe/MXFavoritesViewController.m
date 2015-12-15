@@ -45,7 +45,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
+    // Return number of favorites
     return [self.model numberOfFavorites];
 }
 
@@ -54,9 +54,9 @@
     NSString *CellIdentifier = @"favorite";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
+    // Populate table with titles of favorites
     NSDictionary *favoriteAtIndex = [self.model favoriteAtIndex:indexPath.row];
     NSString *title = favoriteAtIndex[@"title"];
-    //NSString *link  = favoriteAtIndex[@"link"];
     
     cell.textLabel.text = title;
     
@@ -75,6 +75,8 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    // Prepare for segue to web view with link as the url
     
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.favoritesTableView indexPathForSelectedRow];

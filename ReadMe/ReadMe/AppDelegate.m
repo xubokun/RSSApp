@@ -20,6 +20,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    
+    // play rainy mood mp3 file with avfoundation
     NSString *music = [[NSBundle mainBundle]pathForResource:@"Rainy-mood" ofType:@"mp3"];
     audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:music] error:NULL];
     audioPlayer.delegate = self;
@@ -28,13 +30,15 @@
     
     // Override point for customization after application launch.
     
+    // UI color for navigation bar
     [[UINavigationBar appearance] setTranslucent:NO];
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:1.00 green:0.60 blue:0.00 alpha:1.0]];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     
+    
+    // UI color for tab bar
     [[UITabBar appearance] setTranslucent:NO];
-    //[[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:1.00 green:0.60 blue:0.00 alpha:1.0]];
     [[UITabBar appearance] setTintColor:[UIColor colorWithRed:1.00 green:0.60 blue:0.00 alpha:1.0]];
     
     [Parse enableLocalDatastore];
